@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="id">
 
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Slip Manager</title>
 
@@ -11,6 +15,54 @@
 <body>
 
 <h1>Slip Manager</h1>
+
+<input id="nama" placeholder="Nama"><br><br>
+
+<input id="nominal" type="number" placeholder="Nominal"><br><br>
+
+<input id="tanggal" type="date"><br><br>
+
+<textarea id="keterangan" placeholder="Keterangan"></textarea><br><br>
+
+<button onclick="buatSlip()">Simpan Slip</button>
+
+<hr>
+
+<div id="hasil"></div>
+
+<script>
+
+function buatSlip(){
+
+let nama = document.getElementById("nama").value;
+
+let nominal = document.getElementById("nominal").value;
+
+let tanggal = document.getElementById("tanggal").value;
+
+let keterangan = document.getElementById("keterangan").value;
+
+document.getElementById("hasil").innerHTML += `
+
+<div>
+
+<h3>${nama}</h3>
+
+<p>Rp ${nominal}</p>
+
+<p>${tanggal}</p>
+
+<p>${keterangan}</p>
+
+<hr>
+
+</div>
+
+`;
+
+}
+
+</script>
 
 </body>
 
